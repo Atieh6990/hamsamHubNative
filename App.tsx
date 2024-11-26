@@ -5,7 +5,7 @@ import {WebView, WebViewMessageEvent, WebView as WebViewType} from 'react-native
 import {NetworkInfo} from 'react-native-network-info';
 import DeviceInfo from 'react-native-device-info';
 import Spinner from 'react-native-loading-spinner-overlay';
-import { IntentLauncherAndroid } from 'react-native-intent-launcher';
+// import { IntentLauncherAndroid } from 'react-native-intent-launcher';
 
 function App(): React.JSX.Element {
     const webViewRef = useRef<WebViewType | null>(null);
@@ -73,11 +73,12 @@ function App(): React.JSX.Element {
         }
         return false;
     };
+    
 
     const checkAppInstallation = async () => {
-        const appPackageName = 'com.sambazar';
-        const appInstalled = await IntentLauncherAndroid.getAppIntent(appPackageName);
-        console.log('appInstalled' , appInstalled);
+        // const appPackageName = 'com.sambazar';
+        // const appInstalled = await IntentLauncherAndroid.getAppIntent(appPackageName);
+        // console.log('appInstalled' , appInstalled);
     };
     const handleOnMessage = (event: WebViewMessageEvent) => {
         const {type, data} = JSON.parse(event.nativeEvent.data);
